@@ -1,0 +1,23 @@
+#/bin/bash 
+echo "1 intalar por comando" 
+echo "2 instalar por ansible" 
+echo "3 instalar por docker" 
+echo "4 salir servicio  " 
+
+while true; 
+do 
+read -p "elige una opcion" orden 
+case $orden in 
+1) 
+        sudo apt install vsftpd 
+;; 
+2) 
+        ansible-playbook -v ./instalar_ftp.yaml --extra-vars "ansible_sudo_pass=asz" 
+;; 
+3) 
+;; 
+4) 
+        break 
+;; 
+esac 
+done 
