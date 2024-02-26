@@ -1,0 +1,14 @@
+---
+- name: Instalar y configurar servidor FTP
+  hosts: ftp
+  become: yes
+
+  tasks:
+
+    - name: Instalar o actualizar el servidor FTP (vsftpd)
+      apt:
+        name: vsftpd
+        state: latest
+      become: yes
+
+
